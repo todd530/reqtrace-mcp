@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reqtrace-mcp"
+version = "0.1.0"
+description = "Vendor-neutral requirements traceability as an MCP server: tools, an agent demo, and a deterministic eval harness over synthetic data."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+# FastMCP ships in the v1 SDK line; v2 renamed it, so pin <2 for this code.
+dependencies = ["mcp>=1.0,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["reqtrace"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
